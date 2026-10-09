@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 from fastapi import APIRouter, HTTPException, Query
 from typing import List
 from app.models.schemas import StockQuote
-from app.services.market_data_service import market_service, SUPPORTED_STOCKS
+from app.services.market_data_service import market_service
 
 router = APIRouter(prefix="/api/v1/stocks", tags=["stocks"])
 
