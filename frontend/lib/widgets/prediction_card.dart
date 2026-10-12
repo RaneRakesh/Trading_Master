@@ -62,30 +62,33 @@ class PredictionCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   // Audited Win Rate Chip
-                  InkWell(
-                    onTap: onViewHistory,
-                    borderRadius: BorderRadius.circular(6),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                      decoration: BoxDecoration(
-                        color: AppTheme.bullish.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(color: AppTheme.bullish.withValues(alpha: 0.4)),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(Icons.emoji_events_outlined, size: 12, color: AppTheme.bullish),
-                          const SizedBox(width: 4),
-                          Text(
-                            '${winRate.toStringAsFixed(1)}% Win Rate',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 11,
-                              color: AppTheme.bullish,
+                  Tooltip(
+                    message: 'Click to view Trading Master AI\'s audited signal track record for this stock',
+                    child: InkWell(
+                      onTap: onViewHistory,
+                      borderRadius: BorderRadius.circular(6),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: AppTheme.bullish.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(6),
+                          border: Border.all(color: AppTheme.bullish.withValues(alpha: 0.4)),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.emoji_events_outlined, size: 12, color: AppTheme.bullish),
+                            const SizedBox(width: 4),
+                            Text(
+                              '${winRate.toStringAsFixed(1)}% AI Win Rate',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 11,
+                                color: AppTheme.bullish,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -235,7 +238,7 @@ class PredictionCard extends StatelessWidget {
             const SizedBox(height: 14),
           ],
 
-          // Action 1: Open Audited Prediction History & Win Rate Log
+          // Action 1: Open Audited AI Prediction Track Record
           if (onViewHistory != null) ...[
             SizedBox(
               width: double.infinity,
@@ -243,7 +246,7 @@ class PredictionCard extends StatelessWidget {
                 onPressed: onViewHistory,
                 icon: const Icon(Icons.analytics_outlined, size: 18, color: AppTheme.bullish),
                 label: Text(
-                  'View Audited Prediction History (${winRate.toStringAsFixed(1)}% Win Rate)',
+                  'View AI Signal Track Record (${winRate.toStringAsFixed(1)}% Win Rate)',
                   style: const TextStyle(fontWeight: FontWeight.w600, color: AppTheme.bullish),
                 ),
                 style: ElevatedButton.styleFrom(
@@ -264,7 +267,7 @@ class PredictionCard extends StatelessWidget {
               onPressed: onOpenRiskCalculator,
               icon: const Icon(Icons.calculate, size: 18, color: AppTheme.accentBlue),
               label: const Text(
-                'Open Position Sizing & Risk Calculator',
+                'Position Sizing & Risk Calculator (Protect Capital)',
                 style: TextStyle(color: AppTheme.accentBlue, fontWeight: FontWeight.w600),
               ),
               style: OutlinedButton.styleFrom(

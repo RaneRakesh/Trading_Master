@@ -4,15 +4,7 @@
 
 ---
 
-## 📌 1. Repository Quick Description (For GitHub)
-Paste this in your GitHub repository description box:
-```text
-Institutional AI decision-support platform for equities featuring dynamic real-time market data, financial NLP news sentiment catalysts, multi-horizon quant strategies, and audited walk-forward win-rate tracking.
-```
-
----
-
-## 🌟 2. What is Trading Master? (In Plain English)
+## 🌟 1. What is Trading Master? (In Plain English)
 Imagine having an expert quantitative analyst, a veteran macroeconomic researcher, and a disciplined risk manager watching your favorite stocks 24/7.
 
 Traditional trading applications only show static price quotes or lagging charts. **Trading Master transforms raw price feeds into clear, actionable intelligence:**
@@ -21,6 +13,36 @@ Traditional trading applications only show static price quotes or lagging charts
 3. **It Thinks Across Multiple Horizons**: Whether you are an **Intraday trader (15–120 mins)**, a **Swing trader (1–5 days)**, or a **Long-term investor (months to years)**, it tailors its algorithmic strategy specifically for your timeframe.
 4. **It Verifies Its Own Track Record**: Instead of promising unrealistic returns, it audits past prediction performance with walk-forward historical simulations to display a **Verified Win Rate %** and a transparent trade journal.
 5. **It Protects Your Capital First**: Every trade setup comes with an algorithmic invalidation level (stop-loss), target, risk-to-reward ratio, and built-in position sizing calculator.
+
+---
+
+## 🔍 2. Understanding the 3 Core Decision-Support Features (Whose History is This?)
+
+A common question for new users is: *"Whose trade history am I looking at? Did the app trade on my broker account, or is this the AI's predictions?"*
+
+Here is the exact breakdown:
+
+### 1️⃣ AI Prediction Track Record & Verified Win Rate (What the Win-Rate Chip Shows)
+- **Whose history is this?**: **This is Trading Master AI's track record (NOT your personal broker trades).**
+- **What it does**: Whenever you tap the **Win Rate Chip** (e.g. `78.5% Win Rate`) or click **"View AI Prediction Track Record"**, the app opens an audit log showing previous automated signals that our algorithm generated for this specific stock in the past.
+- **How it works**: For each past signal (e.g., BUY at ₹2,150 with Target ₹2,280 and Stop Loss ₹2,070), the engine tracks what the market actually did. Did the price hit the Target first (`TARGET HIT`), or did it hit the Stop Loss first (`STOP LOSS HIT`)?
+- **Why it matters**: It provides **100% transparency**. You can verify how accurate the AI has been on this stock before deciding whether to trust its current signal.
+
+### 2️⃣ Historical Strategy Backtest (Multi-Year Simulation)
+- **What it does**: While the Prediction Audit Log shows recent individual AI signals, the **Backtest Screen** simulates the entire algorithmic trading rule-set over years of historical market candles (100+ simulated trades).
+- **Key Metrics Shown**:
+  - **Overall Win Rate %**: Percentage of winning trades over the entire backtest dataset.
+  - **Profit Factor**: Total gross profits divided by total gross losses (e.g., `2.1x` means ₹2.1 earned for every ₹1 lost).
+  - **Max Drawdown**: The deepest peak-to-trough drop in portfolio value during unfavorable market regimes.
+- **Why it matters**: It proves whether the trading strategy has a robust statistical edge over bull, bear, and sideways markets over long horizons.
+
+### 3️⃣ Risk & Position Sizing Calculator (Capital Protection Tool)
+- **What it does**: This is an interactive execution tool for YOU, the trader. Once the AI gives you a signal with a target and stop loss, you should never blindly guess how many shares to buy.
+- **How it works**:
+  - You input your total account balance (e.g. ₹1,00,000) and your chosen risk percentage (e.g. 1% = max ₹1,000 loss).
+  - The calculator computes the exact number of shares you should purchase.
+  - If the trade hits the stop loss, your loss is capped strictly at ₹1,000. If it hits the target, you capture the asymmetric upside.
+- **Why it matters**: It prevents blowups and guarantees that no single losing trade damages your trading portfolio.
 
 ---
 

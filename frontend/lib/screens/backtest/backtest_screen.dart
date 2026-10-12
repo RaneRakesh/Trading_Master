@@ -73,6 +73,40 @@ class _BacktestScreenState extends State<BacktestScreen> {
                   : ListView(
                       padding: const EdgeInsets.all(16),
                       children: [
+                        // Explainer Banner: What is a strategy backtest?
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 16),
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: AppTheme.accentBlue.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: AppTheme.accentBlue.withValues(alpha: 0.25)),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Icon(Icons.science_outlined, size: 20, color: AppTheme.accentBlue),
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Algorithm Backtest Simulation',
+                                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                                    ),
+                                    const SizedBox(height: 2),
+                                    Text(
+                                      'This simulates how Trading Master\'s mathematical ${widget.mode.toUpperCase()} rule-set performed over historical price bars on ${widget.symbol}. It evaluates the algorithm\'s long-term statistical profitability (not your personal broker account trades).',
+                                      style: const TextStyle(fontSize: 11, color: AppTheme.textSecondary, height: 1.3),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
                         // 1. Performance Overview Card
                         _buildOverviewCard(_summary!),
 
@@ -85,7 +119,7 @@ class _BacktestScreenState extends State<BacktestScreen> {
 
                         // 3. Trade History Title
                         const Text(
-                          'Walk-Forward Trade Log (Chronological)',
+                          'Simulated Algorithmic Trade Log (Chronological)',
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
                         ),
                         const SizedBox(height: 10),

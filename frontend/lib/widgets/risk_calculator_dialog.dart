@@ -107,11 +107,28 @@ class _RiskCalculatorDialogState extends State<RiskCalculatorDialog> {
                 ),
               ],
             ),
-            const Text(
-              'Blueprint Rule: Protect portfolio capital with mathematically validated sizing.',
-              style: TextStyle(fontSize: 12, color: AppTheme.textMuted),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: AppTheme.surface,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppTheme.cardBorder),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Icon(Icons.shield_outlined, size: 16, color: AppTheme.bullish),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Capital Protection Rule: Calculates the exact number of shares to buy so you never lose more than your chosen Risk % (e.g. 1%) if the stop loss is triggered.',
+                      style: TextStyle(fontSize: 11, color: AppTheme.textSecondary, height: 1.3),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 18),
 
             // Form Inputs
             Row(

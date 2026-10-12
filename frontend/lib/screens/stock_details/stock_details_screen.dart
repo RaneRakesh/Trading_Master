@@ -180,26 +180,63 @@ class _StockDetailsScreenState extends State<StockDetailsScreen> {
                     const SizedBox(height: 16),
                   ],
 
-                  // 7. View Strategy Backtest Button
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => BacktestScreen(
-                            symbol: widget.symbol,
-                            mode: predProv.mode,
+                  // 7. Strategy Rule-Set Backtest Simulation
+                  Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: AppTheme.cardBackground,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: AppTheme.cardBorder),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: const [
+                            Icon(Icons.science_outlined, size: 16, color: AppTheme.accentBlue),
+                            SizedBox(width: 6),
+                            Text(
+                              'STRATEGY SIMULATION (MULTI-YEAR)',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.6,
+                                color: AppTheme.accentBlue,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          'Test how this ${predProv.mode.toUpperCase()} rule-set performed over years of historical candle data to verify its statistical edge (not personal broker trades).',
+                          style: const TextStyle(fontSize: 12, color: AppTheme.textSecondary, height: 1.3),
+                        ),
+                        const SizedBox(height: 10),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => BacktestScreen(
+                                    symbol: widget.symbol,
+                                    mode: predProv.mode,
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: const Icon(Icons.assessment, size: 16),
+                            label: Text('Open ${predProv.mode.toUpperCase()} Strategy Backtest'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppTheme.surface,
+                              foregroundColor: AppTheme.textPrimary,
+                              side: const BorderSide(color: AppTheme.accentBlue),
+                              padding: const EdgeInsets.symmetric(vertical: 12),
+                            ),
                           ),
                         ),
-                      );
-                    },
-                    icon: const Icon(Icons.assessment, size: 18),
-                    label: Text('View Historical Backtest for ${predProv.mode.toUpperCase()}'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppTheme.cardBackground,
-                      foregroundColor: AppTheme.textPrimary,
-                      side: const BorderSide(color: AppTheme.cardBorder),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      ],
                     ),
                   ),
 
